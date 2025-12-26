@@ -1,11 +1,16 @@
 #!/usr/bin/env python
 """points_picks.py
 
-Points-only pick generator.
+Points-only pick generator with 2024-25 NBA adjustments.
 
-This script is intentionally lightweight: it uses the `GAME_DATA` payload
-produced by `fetch_points_game_data.py` and applies a points-focused scoring model
-to select 3 unique players per team.
+This script uses the `GAME_DATA` payload produced by `fetch_points_game_data.py`
+and applies a points-focused scoring model calibrated for the 2024-25 season.
+
+Features:
+- Usage Rate: High usage players (>28%) get scoring boost
+- Days of Rest: Optimal (2 days) vs B2B vs rust (3+ days)
+- DvP (Defense vs Position): Automated from opponent's defensive stats
+- Pace Environment: Calibrated for 2024-25 high-pace era (avg ~101.9)
 
 Usage:
   python points_picks.py \
@@ -15,10 +20,9 @@ Usage:
     --season 2025
 
 Notes:
-- This is an offline scorer using only `GAME_DATA` fields. It does NOT do web
-  research (DvP by position, scheme, referee crew, etc.). Those remain part of
-  the prompt workflow.
-- Injury statuses are respected: OUT/DOUBTFUL are excluded.
+- Uses automated DvP from GAME_DATA (no manual web research needed)
+- Injury statuses are respected: OUT/DOUBTFUL are excluded
+- Scheme/FT environment adjustments remain optional (prompt workflow)
 """
 
 from __future__ import annotations
@@ -95,6 +99,9 @@ class Candidate:
     season_pts: float
     l5_pts_avg: float
     l5_pts_stdev: float
+    usg_pct: Optional[float]
+    days_rest: int
+    dvp_bucket: str
     points_outcome_score: float
     proj_pts: float
     confidence_0_100: int
@@ -121,14 +128,49 @@ def _project_minutes(player: Dict[str, Any]) -> Tuple[float, float]:
 
 
 def _compute_environment_adj(projected_game_pace: Optional[float], proj_minutes: float) -> float:
+    """Pace adjustment calibrated for 2024-25 (league avg ~101.9)."""
     if projected_game_pace is None:
         return 0.0
 
-    if projected_game_pace > 103:
-        return 2.0 * (proj_minutes / 35.0)
-    if projected_game_pace < 97:
-        return -2.0 * (proj_minutes / 35.0)
+    # Updated thresholds for 2024-25 high-pace era
+    if projected_game_pace > 104:
+        return 1.5 * (proj_minutes / 35.0)
+    if projected_game_pace < 99:
+        return -1.5 * (proj_minutes / 35.0)
     return 0.0
+
+
+def _compute_usage_adj(usg_pct: Optional[float]) -> float:
+    """Usage rate adjustment - higher usage = more scoring opportunities."""
+    if usg_pct is None:
+        return 0.0
+    
+    if usg_pct >= 28.0:
+        return 1.5  # Primary offensive option
+    if usg_pct < 20.0:
+        return -1.0  # Low usage role player
+    return 0.0  # Standard starter (20-28%)
+
+
+def _compute_rest_adj(days_rest: int, is_away: bool) -> float:
+    """Days of rest adjustment (more nuanced than simple B2B)."""
+    if days_rest == 0:  # Back-to-back
+        return -2.5 if is_away else -1.5
+    if days_rest == 1:  # Standard rest
+        return 0.0
+    if days_rest == 2:  # Optimal recovery
+        return 0.5
+    # 3+ days - potential rust
+    return -0.3
+
+
+def _compute_dvp_adj(dvp_bucket: str) -> float:
+    """DvP (Defense vs Position) adjustment."""
+    if dvp_bucket == "WEAK":
+        return 2.0  # Weak defense = more points
+    if dvp_bucket == "STRONG":
+        return -2.0  # Strong defense = fewer points
+    return 0.0  # AVERAGE or unknown
 
 
 def _compute_minutes_role_adj(proj_minutes: float, recent_minutes_avg: float) -> float:
@@ -156,9 +198,10 @@ def _compute_consistency_adj(l5_pts_stdev: float) -> float:
 
 
 def _fatigue_penalty(is_away: bool, is_b2b: bool, high_travel: bool) -> float:
+    """Legacy B2B penalty - now superseded by _compute_rest_adj but kept for compatibility."""
     penalty = 0.0
-    if is_b2b:
-        penalty -= 3.0 if is_away else 1.5
+    # Note: This is now mostly handled by _compute_rest_adj
+    # Only apply high_travel penalty here
     if high_travel:
         penalty -= 0.5
     return penalty
@@ -190,26 +233,88 @@ def _project_points(
     return round(proj_pts, 2)
 
 
-def _confidence(points_outcome_score: float, proj_minutes: float, l5_pts_stdev: float) -> int:
-    # Heuristic confidence; mirrors prompt categories but only uses available inputs.
+def _confidence(
+    points_outcome_score: float,
+    proj_minutes: float,
+    l5_pts_stdev: float,
+    usg_pct: Optional[float],
+    days_rest: int,
+    dvp_bucket: str,
+) -> int:
+    """Compute confidence score (0-100) based on all available factors."""
     base = 65
 
+    # Minutes stability
     if proj_minutes >= 30:
+        base += 10
+    elif proj_minutes < 26:
+        base -= 12
+
+    # Volatility
+    if l5_pts_stdev <= 5:
         base += 6
-    elif proj_minutes < 24:
+    elif l5_pts_stdev > 7:
         base -= 6
 
-    if l5_pts_stdev <= 5:
-        base += 8
-    elif l5_pts_stdev > 7:
-        base -= 5
-
+    # Overall score
     if points_outcome_score >= 4:
         base += 4
     elif points_outcome_score <= -4:
         base -= 4
 
+    # Usage rate
+    if usg_pct is not None:
+        if usg_pct >= 28.0:
+            base += 3  # High usage = more predictable scoring
+        elif usg_pct < 20.0:
+            base -= 2  # Low usage = less predictable
+
+    # Days of rest
+    if days_rest == 0:  # B2B
+        base -= 6
+    elif days_rest == 2:  # Optimal
+        base += 2
+    elif days_rest >= 3:  # Rust
+        base -= 2
+
+    # DvP matchup
+    if dvp_bucket == "WEAK":
+        base += 5
+    elif dvp_bucket == "STRONG":
+        base -= 5
+
     return int(_cap(base, 50, 95))
+
+
+def _get_dvp_bucket(teams: Dict[str, Any], opp_abbr: str, position: str) -> str:
+    """Get DvP bucket for a player's position against opponent."""
+    opp_team = teams.get(opp_abbr) or {}
+    dvp = opp_team.get("dvp") or {}
+    
+    # Try exact position match first
+    pos_upper = position.upper()
+    if pos_upper in dvp:
+        return str(dvp[pos_upper].get("bucket", "AVERAGE"))
+    
+    # Handle combo positions like "G-F" or "F-G"
+    if "-" in pos_upper:
+        parts = pos_upper.split("-")
+        for part in parts:
+            if part in dvp:
+                return str(dvp[part].get("bucket", "AVERAGE"))
+    
+    # Fallback: map to closest position
+    position_map = {
+        "G": ["PG", "SG"],
+        "F": ["SF", "PF"],
+    }
+    for key, candidates in position_map.items():
+        if key in pos_upper:
+            for cand in candidates:
+                if cand in dvp:
+                    return str(dvp[cand].get("bucket", "AVERAGE"))
+    
+    return "AVERAGE"
 
 
 def build_candidates(
@@ -254,7 +359,9 @@ def build_candidates(
         allowed_norm: Optional[set[str]],
     ) -> List[Candidate]:
         team_players = (payload.get("players") or {}).get(team_abbr) or []
-        b2b = bool((teams.get(team_abbr) or {}).get("back_to_back", False))
+        team_data = teams.get(team_abbr) or {}
+        b2b = bool(team_data.get("back_to_back", False))
+        days_rest = int(team_data.get("days_rest", 1))  # Default to 1 day rest
 
         candidates: List[Candidate] = []
         for p in team_players:
@@ -273,28 +380,39 @@ def build_candidates(
 
             season = p.get("season") or {}
             recent = p.get("recent") or {}
+            position = str(p.get("position") or "")
 
             season_pts = _safe_float(season.get("pts"), 0.0)
             l5_pts = _safe_float((recent.get("pts") or {}).get("avg"), 0.0)
             l5_stdev = _safe_float((recent.get("pts") or {}).get("stdev"), 0.0)
+            
+            # Get usage rate from recent stats
+            usg_pct = recent.get("usg_pct")
+            if usg_pct is not None:
+                usg_pct = _safe_float(usg_pct, None)
+            
+            # Get DvP bucket for this player's position vs opponent
+            dvp_bucket = _get_dvp_bucket(teams, opp_abbr, position)
 
+            # Calculate adjustments
             environment_adj = _compute_environment_adj(projected_game_pace, proj_minutes)
             minutes_role_adj = _compute_minutes_role_adj(proj_minutes, recent_minutes_avg)
             form_adj = _compute_form_adj(l5_pts, season_pts)
             consistency_adj = _compute_consistency_adj(l5_stdev)
+            usage_adj = _compute_usage_adj(usg_pct)
+            rest_adj = _compute_rest_adj(days_rest, is_away)
+            dvp_adj = _compute_dvp_adj(dvp_bucket)
             fatigue = _fatigue_penalty(is_away=is_away, is_b2b=b2b, high_travel=high_travel)
 
-            # Offline scorer limitations: DvP / scheme / shot-profile / FT env / usage cascade = 0.
+            # Compute total points outcome score
             points_outcome_score = (
-                0.0
-                + environment_adj
+                environment_adj
                 + minutes_role_adj
                 + form_adj
                 + consistency_adj
-                + 0.0
-                + 0.0
-                + 0.0
-                + 0.0
+                + usage_adj
+                + rest_adj
+                + dvp_adj
                 + fatigue
             )
 
@@ -310,6 +428,9 @@ def build_candidates(
                 points_outcome_score=points_outcome_score,
                 proj_minutes=proj_minutes,
                 l5_pts_stdev=l5_stdev,
+                usg_pct=usg_pct,
+                days_rest=days_rest,
+                dvp_bucket=dvp_bucket,
             )
 
             why_bits = []
@@ -320,6 +441,11 @@ def build_candidates(
                 why_bits.append(f"season={season_pts:.1f}")
             if l5_pts > 0:
                 why_bits.append(f"L5={l5_pts:.1f}")
+            if usg_pct is not None:
+                why_bits.append(f"usg={usg_pct:.1f}%")
+            why_bits.append(f"rest={days_rest}d")
+            if dvp_bucket != "AVERAGE":
+                why_bits.append(f"dvp={dvp_bucket}")
             why_bits.append(f"score={points_outcome_score:.2f}")
 
             candidates.append(
@@ -327,11 +453,14 @@ def build_candidates(
                     player=str(p.get("name") or ""),
                     team=team_abbr,
                     opponent=opp_abbr,
-                    position=str(p.get("position") or ""),
+                    position=position,
                     proj_minutes=proj_minutes,
                     season_pts=season_pts,
                     l5_pts_avg=l5_pts,
                     l5_pts_stdev=l5_stdev,
+                    usg_pct=usg_pct,
+                    days_rest=days_rest,
+                    dvp_bucket=dvp_bucket,
                     points_outcome_score=round(points_outcome_score, 3),
                     proj_pts=proj_pts,
                     confidence_0_100=conf,

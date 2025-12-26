@@ -1,0 +1,92 @@
+
+============================================================
+TUNING SESSION: 2025-12-23T19:22:25.017463+00:00
+Game Date: 2025-12-22 | Season: 2025
+------------------------------------------------------------
+Players Analyzed: 96
+MAE: 4.51 pts | RMSE: 5.72 pts
+Bias: 1.61 pts (positive = under-predicting)
+Within 5 pts: 63.5% | Within 10 pts: 90.6%
+------------------------------------------------------------
+TOP CORRELATIONS (factor → error):
+  minutes: r=-0.1768
+  minutes_raw: r=-0.1656
+  usage_raw: r=-0.0836
+  rest: r=0.0781
+  rest_raw: r=0.0781
+------------------------------------------------------------
+TOP SUGGESTION:
+  Factor: minutes (Minutes stability bonus)
+  Correlation: -0.1768
+  Recommendation: DECREASE weights or REVIEW logic (adjustment over-predicts)
+  Suggested Change: -10-20% from current weights
+============================================================
+
+============================================================
+TUNING SESSION: 2025-12-23T19:47:28.502397+00:00
+Game Date: 2025-12-22 | Season: 2025
+------------------------------------------------------------
+Players Analyzed: 96
+MAE: 4.51 pts | RMSE: 5.72 pts
+Bias: 1.61 pts (positive = under-predicting)
+Within 5 pts: 63.5% | Within 10 pts: 90.6%
+------------------------------------------------------------
+TOP CORRELATIONS (factor → error):
+  minutes: r=-0.1778
+  minutes_raw: r=-0.1656
+  usage_raw: r=-0.0836
+  rest: r=0.0781
+  rest_raw: r=0.0781
+------------------------------------------------------------
+TOP SUGGESTION:
+  Factor: minutes (Minutes stability bonus)
+  Correlation: -0.1778
+  Recommendation: DECREASE weights or REVIEW logic (adjustment over-predicts)
+  Suggested Change: -10-20% from current weights
+============================================================
+
+============================================================
+TUNING SESSION: 2025-12-24T09:52:35.847802+00:00
+Game Date: 2025-12-23 | Season: 2025
+------------------------------------------------------------
+Players Analyzed: 194
+MAE: 5.64 pts | RMSE: 7.29 pts
+Bias: 2.03 pts (positive = under-predicting)
+Within 5 pts: 56.2% | Within 10 pts: 84.0%
+------------------------------------------------------------
+TOP CORRELATIONS (factor → error):
+  form: r=0.2295
+  form_raw: r=0.2164
+  dvp: r=0.1688
+  dvp_rank_raw: r=0.1603
+  pace: r=0.1272
+------------------------------------------------------------
+TOP SUGGESTION:
+  Factor: form (Recent form adjustment)
+  Correlation: 0.2295
+  Recommendation: INCREASE weights (adjustment under-predicts when conditions favor)
+  Suggested Change: +10-20% to current weights
+============================================================
+
+============================================================
+TUNING SESSION: 2025-12-26T20:18:41.563803+00:00
+Game Date: 2025-12-25 | Season: 2025
+------------------------------------------------------------
+Players Analyzed: 68
+MAE: 5.86 pts | RMSE: 7.61 pts
+Bias: 0.97 pts (positive = under-predicting)
+Within 5 pts: 51.5% | Within 10 pts: 82.4%
+------------------------------------------------------------
+TOP CORRELATIONS (factor → error):
+  form_raw: r=0.2511
+  form: r=0.1671
+  pace: r=0.1631
+  league_rank: r=0.1428
+  usage_raw: r=0.1341
+------------------------------------------------------------
+TOP SUGGESTION:
+  Factor: form (Recent form adjustment)
+  Correlation: 0.1671
+  Recommendation: INCREASE weights (adjustment under-predicts when conditions favor)
+  Suggested Change: +10-20% to current weights
+============================================================

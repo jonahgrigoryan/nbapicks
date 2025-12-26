@@ -1,0 +1,92 @@
+
+============================================================
+TUNING SESSION: 2025-12-21T07:15:25.497091+00:00
+Game Date: 2025-12-20 | Season: 2025
+------------------------------------------------------------
+Players Analyzed: 133
+MAE: 5.58 pts | RMSE: 7.35 pts
+Bias: 2.29 pts (positive = under-predicting)
+Within 5 pts: 57.9% | Within 10 pts: 83.5%
+------------------------------------------------------------
+TOP CORRELATIONS (factor → error):
+  form: r=0.1725
+  form_raw: r=0.1392
+  rest: r=-0.1224
+  pace_raw: r=0.1182
+  consistency_raw: r=-0.1173
+------------------------------------------------------------
+TOP SUGGESTION:
+  Factor: form (Recent form adjustment)
+  Correlation: 0.1725
+  Recommendation: INCREASE weights (adjustment under-predicts when conditions favor)
+  Suggested Change: +10-20% to current weights
+============================================================
+
+============================================================
+TUNING SESSION: 2025-12-22T10:39:39.557464+00:00
+Game Date: 2025-12-21 | Season: 2025
+------------------------------------------------------------
+Players Analyzed: 78
+MAE: 5.81 pts | RMSE: 7.62 pts
+Bias: 2.39 pts (positive = under-predicting)
+Within 5 pts: 55.1% | Within 10 pts: 80.8%
+------------------------------------------------------------
+TOP CORRELATIONS (factor → error):
+  form: r=0.2815
+  form_raw: r=0.2087
+  pace_raw: r=0.1818
+  consistency: r=-0.1091
+  consistency_raw: r=0.0944
+------------------------------------------------------------
+TOP SUGGESTION:
+  Factor: form (Recent form adjustment)
+  Correlation: 0.2815
+  Recommendation: INCREASE weights (adjustment under-predicts when conditions favor)
+  Suggested Change: +10-20% to current weights
+============================================================
+
+============================================================
+TUNING SESSION: 2025-12-23T09:32:32.605303+00:00
+Game Date: 2025-12-22 | Season: 2025
+------------------------------------------------------------
+Players Analyzed: 94
+MAE: 4.91 pts | RMSE: 6.67 pts
+Bias: 1.96 pts (positive = under-predicting)
+Within 5 pts: 61.7% | Within 10 pts: 88.3%
+------------------------------------------------------------
+TOP CORRELATIONS (factor → error):
+  minutes: r=-0.1291
+  minutes_raw: r=-0.1214
+  consistency_raw: r=0.0706
+  rest: r=0.0324
+  rest_raw: r=0.0324
+------------------------------------------------------------
+TOP SUGGESTION:
+  Factor: minutes (Minutes stability bonus)
+  Correlation: -0.1291
+  Recommendation: DECREASE weights or REVIEW logic (adjustment over-predicts)
+  Suggested Change: -10-20% from current weights
+============================================================
+
+============================================================
+TUNING SESSION: 2025-12-24T10:39:42.552802+00:00
+Game Date: 2025-12-23 | Season: 2025
+------------------------------------------------------------
+Players Analyzed: 194
+MAE: 5.52 pts | RMSE: 7.03 pts
+Bias: 1.91 pts (positive = under-predicting)
+Within 5 pts: 56.7% | Within 10 pts: 84.5%
+------------------------------------------------------------
+TOP CORRELATIONS (factor → error):
+  form: r=0.2353
+  form_raw: r=0.2229
+  dvp: r=0.1780
+  dvp_rank_raw: r=0.1779
+  pace: r=0.1364
+------------------------------------------------------------
+TOP SUGGESTION:
+  Factor: form (Recent form adjustment)
+  Correlation: 0.2353
+  Recommendation: INCREASE weights (adjustment under-predicts when conditions favor)
+  Suggested Change: +10-20% to current weights
+============================================================
