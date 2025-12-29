@@ -1,0 +1,118 @@
+{
+  "meta": {
+    "matchup": "GSW @ BKN",
+    "game_date": "2025-12-29",
+    "data_source": "balldontlie_goat_mock",
+    "features_used": [
+      "official_usage_pct",
+      "official_ts_pct",
+      "team_drtg",
+      "starter_detection",
+      "league_rank",
+      "clutch_scoring",
+      "monte_carlo_10k_iterations"
+    ],
+    "simulation_iterations": 10000,
+    "note": "Mock data demonstration - requires BALLDONTLIE_API_KEY for live data"
+  },
+  "away_picks": [
+    {
+      "player": "Stephen Curry",
+      "line": 26.3,
+      "adjusted_mean": 33.02,
+      "win_prob_pct": 86.6,
+      "edge_pts": 6.72,
+      "confidence_0_100": 95,
+      "goat_factors": {
+        "usage_pct": 31.2,
+        "ts_pct": 0.638,
+        "opp_drtg": 117.2,
+        "clutch_ppg": 3.8,
+        "league_rank": 12
+      },
+      "why_summary": "Elite usage [31.2%] + Outstanding TS [63.8%] vs weak DEF [117.2 DRtg]. Top 12 scorer. Clutch performer [3.8 PPG]. Simulation edge: +6.7 pts."
+    },
+    {
+      "player": "Dennis Schroder",
+      "line": 14.8,
+      "adjusted_mean": 19.17,
+      "win_prob_pct": 77.6,
+      "edge_pts": 4.37,
+      "confidence_0_100": 85,
+      "goat_factors": {
+        "usage_pct": 21.4,
+        "ts_pct": 0.542,
+        "opp_drtg": 117.2,
+        "clutch_ppg": 2.1,
+        "league_rank": 92
+      },
+      "why_summary": "Solid usage [21.4%] vs weak DEF [117.2 DRtg]. Clutch reliable [2.1 PPG]. Standard rest. Simulation edge: +4.4 pts."
+    },
+    {
+      "player": "Andrew Wiggins",
+      "line": 15.7,
+      "adjusted_mean": 18.76,
+      "win_prob_pct": 71.1,
+      "edge_pts": 3.06,
+      "confidence_0_100": 78,
+      "goat_factors": {
+        "usage_pct": 19.5,
+        "ts_pct": 0.558,
+        "opp_drtg": 117.2,
+        "clutch_ppg": 1.8,
+        "league_rank": 78
+      },
+      "why_summary": "Moderate usage [19.5%] + Above avg TS [55.8%] vs weak DEF [117.2 DRtg]. Recent form trending up. Simulation edge: +3.1 pts."
+    }
+  ],
+  "home_picks": [
+    {
+      "player": "Cam Thomas",
+      "line": 24.1,
+      "adjusted_mean": 30.38,
+      "win_prob_pct": 81.0,
+      "edge_pts": 6.28,
+      "confidence_0_100": 90,
+      "goat_factors": {
+        "usage_pct": 29.8,
+        "ts_pct": 0.578,
+        "opp_drtg": 115.8,
+        "clutch_ppg": 3.5,
+        "league_rank": 18
+      },
+      "why_summary": "High usage [29.8%] + Good TS [57.8%] vs below avg DEF [115.8 DRtg]. Top 18 scorer. Clutch performer [3.5 PPG]. 2-day rest advantage. Simulation edge: +6.3 pts."
+    },
+    {
+      "player": "Nic Claxton",
+      "line": 11.8,
+      "adjusted_mean": 15.46,
+      "win_prob_pct": 79.6,
+      "edge_pts": 3.66,
+      "confidence_0_100": 87,
+      "goat_factors": {
+        "usage_pct": 15.6,
+        "ts_pct": 0.658,
+        "opp_drtg": 115.8,
+        "clutch_ppg": 1.4,
+        "league_rank": 142
+      },
+      "why_summary": "Elite efficiency [65.8% TS] + 2-day rest advantage. Strong matchup vs GSW frontcourt. Low volatility [4.5 stdev]. Simulation edge: +3.7 pts."
+    },
+    {
+      "player": "Cameron Johnson",
+      "line": 14.6,
+      "adjusted_mean": 18.82,
+      "win_prob_pct": 78.8,
+      "edge_pts": 4.22,
+      "confidence_0_100": 86,
+      "goat_factors": {
+        "usage_pct": 18.7,
+        "ts_pct": 0.612,
+        "opp_drtg": 115.8,
+        "clutch_ppg": 1.9,
+        "league_rank": 95
+      },
+      "why_summary": "Strong efficiency [61.2% TS] + 2-day rest advantage vs below avg DEF [115.8 DRtg]. Consistent performer [5.2 stdev]. Simulation edge: +4.2 pts."
+    }
+  ]
+}

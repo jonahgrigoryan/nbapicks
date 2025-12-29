@@ -211,25 +211,25 @@ def compute_adjustment_score(
     
     # B. Recent Form (capped)
     if season_pts > 0:
-        form_raw = ((l5_pts_avg - season_pts) / season_pts) * 9.0
-        form_adj = _cap(form_raw, -3.8, 3.8)
-        adjustment_score += form_adj
+        form_raw = ((l5_pts_avg - season_pts) / season_pts) * 11.0
+        form_adj = _cap(form_raw, -4.5, 4.5)
+    adjustment_score += form_adj
     
     # C. Consistency / Volatility
     if l5_pts_stdev <= 5:
-        consistency_adj = 1.2
+        consistency_adj = 1.0
     elif l5_pts_stdev <= 7:
         consistency_adj = 0.0
     else:
-        consistency_adj = -1.2
+        consistency_adj = -1.0
     adjustment_score += consistency_adj
     
     # D. Pace Environment
     if projected_game_pace is not None:
-        if projected_game_pace > 104:
-            pace_adj = 2.8
-        elif projected_game_pace < 99:
-            pace_adj = -2.8
+        if projected_game_pace >= 104:
+            pace_adj = 2.6
+        elif projected_game_pace <= 98:
+            pace_adj = -2.6
         else:
             pace_adj = 0.0
     else:
@@ -237,15 +237,14 @@ def compute_adjustment_score(
     adjustment_score += pace_adj
     
     # E. Usage Rate (GOAT Official Data)
+    usage_adj = 0.0
     if usg_pct is not None:
         usg_pct_val = _safe_float(usg_pct, 0.0)
         if usg_pct_val >= 28.0:
-            usage_adj = 1.5  # Primary scorer
+            usage_adj = 1.2  # Primary scorer (Dec 28 patch)
         elif usg_pct_val < 20.0:
             usage_adj = -1.0  # Role player
-        else:
-            usage_adj = 0.0
-        adjustment_score += usage_adj
+    adjustment_score += usage_adj
     
     # F. True Shooting % (GOAT Official Data)
     if ts_pct is not None:
@@ -279,11 +278,11 @@ def compute_adjustment_score(
     
     # H. Days of Rest
     if days_rest == 0:  # B2B
-        rest_adj = -2.5 if is_away else -1.5
+        rest_adj = -1.8 if is_away else -1.0
     elif days_rest == 1:
         rest_adj = 0.0
     elif days_rest == 2:
-        rest_adj = 0.5
+        rest_adj = 0.2
     else:  # 3+
         rest_adj = -0.3
     adjustment_score += rest_adj
@@ -304,9 +303,9 @@ def compute_adjustment_score(
     # J. League Scoring Rank (GOAT - from leaders)
     if pts_league_rank is not None:
         if pts_league_rank <= 10:
-            rank_adj = 1.0  # Top 10 scorer
+            rank_adj = 1.0  # Top 10 scorer (Dec 27 patch: reduced from 1.2)
         elif pts_league_rank <= 25:
-            rank_adj = 0.5  # Top 25 scorer
+            rank_adj = 0.5  # Top 25 scorer (Dec 27 patch: reduced from 0.6)
         elif pts_league_rank >= 100:
             rank_adj = -0.5  # Low volume
         else:
