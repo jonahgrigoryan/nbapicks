@@ -3,7 +3,7 @@
 Download a specific time segment from a YouTube video.
 
 Usage:
-    python download_youtube_segment.py <url> <start_time> <duration>
+    python download_youtube_segment.py <url> <start_time> <duration> [--cookies <cookies_file>]
     
 Examples:
     # Download 4 minutes starting at 1:23:45
@@ -14,6 +14,15 @@ Examples:
     
     # Download from 1:23:45 to 1:27:45 (4 minutes)
     python download_youtube_segment.py "https://youtube.com/watch?v=VIDEO_ID" 1:23:45 1:27:45 --end-time
+    
+    # With cookies (to bypass YouTube bot detection)
+    python download_youtube_segment.py "https://youtube.com/watch?v=VIDEO_ID" 1:23:45 4:00 --cookies cookies.txt
+    
+    # Export cookies from browser (Chrome/Edge):
+    # yt-dlp --cookies-from-browser chrome --cookies cookies.txt "https://youtube.com/watch?v=VIDEO_ID"
+    
+    # Export cookies from browser (Firefox):
+    # yt-dlp --cookies-from-browser firefox --cookies cookies.txt "https://youtube.com/watch?v=VIDEO_ID"
 """
 
 import sys
@@ -62,7 +71,7 @@ def check_ytdlp_version():
         return None
 
 
-def download_segment(url, start_time, duration=None, end_time=None, output_dir=None):
+def download_segment(url, start_time, duration=None, end_time=None, output_dir=None, cookies=None):
     """
     Download a specific segment from a YouTube video.
     
@@ -114,9 +123,12 @@ def download_segment(url, start_time, duration=None, end_time=None, output_dir=N
             '--format', 'best[ext=mp4]/best',
             '--download-sections', f'*{start_seconds}-{end_seconds}',
             '--no-playlist',
-            '--output', output_template,
-            url
+            '--user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            '--extractor-args', 'youtube:player_client=android',
         ]
+        if cookies:
+            cmd.extend(['--cookies', cookies])
+        cmd.extend(['--output', output_template, url])
         method = "download-sections (efficient)"
     else:
         # Method 2: Download full video and trim with ffmpeg (fallback for older versions)
@@ -126,10 +138,16 @@ def download_segment(url, start_time, duration=None, end_time=None, output_dir=N
             'yt-dlp',
             '--format', 'best[ext=mp4]/best',
             '--no-playlist',
+            '--user-agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36',
+            '--extractor-args', 'youtube:player_client=android',
+        ]
+        if cookies:
+            cmd.extend(['--cookies', cookies])
+        cmd.extend([
             '--output', temp_output,
             '--postprocessor-args', f'ffmpeg:-ss {start_seconds} -t {duration_seconds} -c copy',
             url
-        ]
+        ])
         method = "download + trim (fallback)"
     
     print(f"Downloading segment:")
@@ -155,6 +173,12 @@ def download_segment(url, start_time, duration=None, end_time=None, output_dir=N
         print("1. Make sure yt-dlp is up to date: pip install --upgrade yt-dlp")
         print("2. Check that ffmpeg is installed (for fallback method)")
         print("3. Verify the URL and timestamps are correct")
+        if not cookies:
+            print("\n4. YouTube may require cookies to bypass bot detection.")
+            print("   Export cookies from your browser:")
+            print("   - Chrome/Edge: yt-dlp --cookies-from-browser chrome --cookies cookies.txt <url>")
+            print("   - Firefox: yt-dlp --cookies-from-browser firefox --cookies cookies.txt <url>")
+            print("   Then use: --cookies cookies.txt")
         sys.exit(1)
 
 
@@ -197,8 +221,18 @@ def main():
         if output_dir_idx + 1 < len(sys.argv):
             output_dir = sys.argv[output_dir_idx + 1]
     
+    # Optional cookies file
+    cookies = None
+    if '--cookies' in sys.argv:
+        cookies_idx = sys.argv.index('--cookies')
+        if cookies_idx + 1 < len(sys.argv):
+            cookies = sys.argv[cookies_idx + 1]
+        else:
+            print("Error: --cookies requires a cookies file path")
+            sys.exit(1)
+    
     try:
-        download_segment(url, start_time, duration=duration, end_time=end_time, output_dir=output_dir)
+        download_segment(url, start_time, duration=duration, end_time=end_time, output_dir=output_dir, cookies=cookies)
     except Exception as e:
         print(f"Error: {e}")
         sys.exit(1)
