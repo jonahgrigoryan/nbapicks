@@ -1,0 +1,13 @@
+# Simple one-liner command (zsh/bash compatible):
+
+export PATH="$HOME/.local/bin:$PATH" && yt-dlp --cookies cookies.txt --format "best[ext=mp4]/best" --download-sections "*398-668" --no-playlist --output "%(title)s_segment_6-38-11-08.%(ext)s" "https://youtu.be/p_t6FEQm7z8?si=38kalSq8vQIpbel2"
+
+# Or use the script:
+./run_download.zsh
+
+# Or use the Python script:
+python3 download_youtube_segment.py "https://youtu.be/p_t6FEQm7z8?si=38kalSq8vQIpbel2" 6:38 4:30 --cookies cookies.txt
+
+# NOTE: If you get "Sign in to confirm you're not a bot" error:
+# The cookies.txt file needs to be refreshed. Export fresh cookies from your browser:
+# yt-dlp --cookies-from-browser chrome --cookies cookies.txt "https://youtu.be/p_t6FEQm7z8?si=38kalSq8vQIpbel2"
