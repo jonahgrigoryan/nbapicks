@@ -83,6 +83,7 @@ BALDONTLIE_BASE_NBA_V1 = "https://api.balldontlie.io/nba/v1"
 _REQUEST_WINDOW_SEC = 60
 _MAX_REQUESTS_PER_WINDOW = 50
 _REQUEST_TIMES: deque = deque()
+_HTTP_TIMEOUT_SEC = 45
 
 
 def bdl_get(path: str, params: Dict[str, Any]) -> Dict[str, Any]:
@@ -118,10 +119,17 @@ def bdl_get(path: str, params: Dict[str, Any]) -> Dict[str, Any]:
         if sleep_for > 0:
             time.sleep(sleep_for)
 
-    # Retry on 429
+    # Retry on 429 (and transient connection/timeout errors)
     resp: Optional[requests.Response] = None
     for attempt in range(3):
-        resp = requests.get(url, headers=headers, params=params, timeout=15)
+        try:
+            resp = requests.get(url, headers=headers, params=params, timeout=_HTTP_TIMEOUT_SEC)
+        except (requests.exceptions.ReadTimeout, requests.exceptions.ConnectionError):
+            if attempt < 2:
+                time.sleep(1.0 + attempt * 1.5)
+                continue
+            raise
+
         _REQUEST_TIMES.append(time.time())
         if resp.status_code == 429 and attempt < 2:
             time.sleep(1.0 + attempt * 1.5)

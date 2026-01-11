@@ -1,0 +1,143 @@
+{
+  "meta": {
+    "matchup": "SAC @ GSW",
+    "game_date": "2026-01-09",
+    "data_source": "balldontlie_goat",
+    "features_used": [
+      "official_usage_pct",
+      "official_ts_pct",
+      "team_drtg",
+      "starter_detection",
+      "league_rank",
+      "clutch_scoring"
+    ]
+  },
+  "away_picks": [
+    {
+      "player": "Russell Westbrook",
+      "line": 14.5,
+      "adjusted_mean": 16.38,
+      "win_prob_pct": 67.4,
+      "edge_pts": 1.88,
+      "confidence_0_100": 94,
+      "selection_tier": 1,
+      "selection_flag": null,
+      "goat_factors": {
+        "usage_pct": 39.1,
+        "ts_pct": null,
+        "opp_drtg": 110.0,
+        "clutch_ppg": null,
+        "league_rank": 75
+      },
+      "why_summary": "Usage [39.1%]. vs DEF [110.0 DRtg]. Simulation edge: +1.9 pts."
+    },
+    {
+      "player": "DeMar DeRozan",
+      "line": 18.5,
+      "adjusted_mean": 15.07,
+      "win_prob_pct": 30.5,
+      "edge_pts": -3.43,
+      "confidence_0_100": 64,
+      "selection_tier": 4,
+      "selection_flag": "\u26a1 FALLBACK PICK",
+      "goat_factors": {
+        "usage_pct": 30.2,
+        "ts_pct": null,
+        "opp_drtg": 110.0,
+        "clutch_ppg": null,
+        "league_rank": 43
+      },
+      "why_summary": "Usage [30.2%]. vs DEF [110.0 DRtg]. Simulation edge: -3.4 pts."
+    },
+    {
+      "player": "Zach LaVine",
+      "line": 20.5,
+      "adjusted_mean": 9.36,
+      "win_prob_pct": 13.0,
+      "edge_pts": -11.14,
+      "confidence_0_100": 50,
+      "selection_tier": 4,
+      "selection_flag": "\u26a1 FALLBACK PICK",
+      "goat_factors": {
+        "usage_pct": 29.9,
+        "ts_pct": null,
+        "opp_drtg": 110.0,
+        "clutch_ppg": null,
+        "league_rank": null
+      },
+      "why_summary": "Usage [29.9%]. vs DEF [110.0 DRtg]. Simulation edge: -11.1 pts."
+    }
+  ],
+  "home_picks": [
+    {
+      "player": "Brandin Podziemski",
+      "line": 9.5,
+      "adjusted_mean": 8.43,
+      "win_prob_pct": 42.4,
+      "edge_pts": -1.07,
+      "confidence_0_100": 74,
+      "selection_tier": 4,
+      "selection_flag": "\u26a1 FALLBACK PICK",
+      "goat_factors": {
+        "usage_pct": 22.4,
+        "ts_pct": null,
+        "opp_drtg": 110.0,
+        "clutch_ppg": null,
+        "league_rank": 112
+      },
+      "why_summary": "Usage [22.4%]. vs DEF [110.0 DRtg]. Simulation edge: -1.1 pts."
+    },
+    {
+      "player": "Draymond Green",
+      "line": 8.5,
+      "adjusted_mean": 5.87,
+      "win_prob_pct": 29.1,
+      "edge_pts": -2.63,
+      "confidence_0_100": 63,
+      "selection_tier": 4,
+      "selection_flag": "\u26a1 FALLBACK PICK",
+      "goat_factors": {
+        "usage_pct": 23.7,
+        "ts_pct": null,
+        "opp_drtg": 110.0,
+        "clutch_ppg": null,
+        "league_rank": 158
+      },
+      "why_summary": "Usage [23.7%]. vs DEF [110.0 DRtg]. Simulation edge: -2.6 pts."
+    },
+    {
+      "player": "Stephen Curry",
+      "line": 28.5,
+      "adjusted_mean": 20.95,
+      "win_prob_pct": 25.3,
+      "edge_pts": -7.55,
+      "confidence_0_100": 60,
+      "selection_tier": 4,
+      "selection_flag": "\u26a1 FALLBACK PICK",
+      "goat_factors": {
+        "usage_pct": 42.6,
+        "ts_pct": null,
+        "opp_drtg": 110.0,
+        "clutch_ppg": null,
+        "league_rank": 9
+      },
+      "why_summary": "Usage [42.6%]. vs DEF [110.0 DRtg]. Top 10 scorer (#9). Simulation edge: -7.5 pts."
+    }
+  ],
+  "selection_summary": {
+    "away_tier_breakdown": {
+      "1": 1,
+      "2": 0,
+      "3": 0,
+      "4": 2
+    },
+    "home_tier_breakdown": {
+      "1": 0,
+      "2": 0,
+      "3": 0,
+      "4": 3
+    },
+    "relaxed_picks_count": 0,
+    "fallback_picks_count": 5
+  }
+}

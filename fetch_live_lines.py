@@ -58,6 +58,7 @@ BALDONTLIE_BASE_NBA_V1 = "https://api.balldontlie.io/nba/v1"
 _REQUEST_WINDOW_SEC = 60
 _MAX_REQUESTS_PER_WINDOW = 50
 _REQUEST_TIMES: deque = deque()
+_HTTP_TIMEOUT_SEC = 45
 
 
 def bdl_get(path: str, params: Dict[str, Any]) -> Dict[str, Any]:
@@ -93,10 +94,17 @@ def bdl_get(path: str, params: Dict[str, Any]) -> Dict[str, Any]:
         if sleep_for > 0:
             time.sleep(sleep_for)
 
-    # Retry on 429
+    # Retry on 429 (and transient connection/timeout errors)
     resp: Optional[requests.Response] = None
     for attempt in range(3):
-        resp = requests.get(url, headers=headers, params=params, timeout=15)
+        try:
+            resp = requests.get(url, headers=headers, params=params, timeout=_HTTP_TIMEOUT_SEC)
+        except (requests.exceptions.ReadTimeout, requests.exceptions.ConnectionError):
+            if attempt < 2:
+                time.sleep(1.0 + attempt * 1.5)
+                continue
+            raise
+
         _REQUEST_TIMES.append(time.time())
         if resp.status_code == 429 and attempt < 2:
             time.sleep(1.0 + attempt * 1.5)
@@ -176,6 +184,27 @@ def _fetch_player_info(player_id: int) -> Optional[Dict[str, Any]]:
         return response.get("data") or response
     except Exception:
         return None
+
+
+def _odds_to_implied(odds: Optional[int]) -> Optional[float]:
+    if odds is None:
+        return None
+    try:
+        o = int(odds)
+    except (ValueError, TypeError):
+        return None
+    if o > 0:
+        return 100 / (o + 100)
+    return abs(o) / (abs(o) + 100)
+
+
+def _line_quality(over_odds: Optional[int], under_odds: Optional[int]) -> float:
+    """Lower is better (closer to a fair 50/50 line)."""
+    over_imp = _odds_to_implied(over_odds)
+    under_imp = _odds_to_implied(under_odds)
+    if over_imp is None or under_imp is None:
+        return 10.0
+    return abs(over_imp - 0.5) + abs(under_imp - 0.5)
 
 
 def fetch_player_props_for_game(game_id: int, prop_type: str = "points") -> List[PlayerProp]:
@@ -479,7 +508,19 @@ def main() -> None:
         # Single game by ID
         props = fetch_player_props_for_game(args.game_id, args.prop_type)
         if args.simple:
-            output = {p.player_name: p.line for p in props}
+            # De-duplicate: the feed includes many books/alt lines. Prefer the most
+            # "main" line (odds closest to a fair 50/50).
+            best: Dict[int, PlayerProp] = {}
+            for p in props:
+                existing = best.get(p.player_id)
+                if existing is None:
+                    best[p.player_id] = p
+                    continue
+                if _line_quality(p.over_odds, p.under_odds) < _line_quality(
+                    existing.over_odds, existing.under_odds
+                ):
+                    best[p.player_id] = p
+            output = {p.player_name: p.line for p in best.values()}
         else:
             output = [asdict(p) for p in props]
         print(json.dumps(output, indent=2))

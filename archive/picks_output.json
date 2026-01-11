@@ -1,0 +1,143 @@
+{
+  "meta": {
+    "matchup": "BKN @ MEM",
+    "game_date": "2026-01-11",
+    "data_source": "balldontlie_goat",
+    "features_used": [
+      "official_usage_pct",
+      "official_ts_pct",
+      "team_drtg",
+      "starter_detection",
+      "league_rank",
+      "clutch_scoring"
+    ]
+  },
+  "away_picks": [
+    {
+      "player": "Noah Clowney",
+      "line": 15.5,
+      "adjusted_mean": 14.1,
+      "win_prob_pct": 38.5,
+      "edge_pts": -1.4,
+      "confidence_0_100": 46,
+      "selection_tier": 4,
+      "selection_flag": "\u26a1 FALLBACK PICK",
+      "goat_factors": {
+        "usage_pct": 30.9,
+        "ts_pct": null,
+        "opp_drtg": 110.0,
+        "clutch_ppg": null,
+        "league_rank": 94
+      },
+      "why_summary": "Usage [30.9%] + 1 day rest. League Rank #94. Simulation edge: -1.4 pts."
+    },
+    {
+      "player": "Terance Mann",
+      "line": 8.5,
+      "adjusted_mean": 5.0,
+      "win_prob_pct": 25.7,
+      "edge_pts": -3.5,
+      "confidence_0_100": 31,
+      "selection_tier": 4,
+      "selection_flag": "\u26a1 FALLBACK PICK",
+      "goat_factors": {
+        "usage_pct": 22.3,
+        "ts_pct": null,
+        "opp_drtg": 110.0,
+        "clutch_ppg": null,
+        "league_rank": 173
+      },
+      "why_summary": "Usage [22.3%] + 1 day rest. League Rank #173. Simulation edge: -3.5 pts."
+    },
+    {
+      "player": "Nicolas Claxton",
+      "line": 12.5,
+      "adjusted_mean": 7.3,
+      "win_prob_pct": 16.0,
+      "edge_pts": -5.3,
+      "confidence_0_100": 19,
+      "selection_tier": 4,
+      "selection_flag": "\u26a1 FALLBACK PICK",
+      "goat_factors": {
+        "usage_pct": 23.8,
+        "ts_pct": null,
+        "opp_drtg": 110.0,
+        "clutch_ppg": null,
+        "league_rank": 89
+      },
+      "why_summary": "Usage [23.8%] + 1 day rest. League Rank #89. Simulation edge: -5.3 pts."
+    }
+  ],
+  "home_picks": [
+    {
+      "player": "Jaren Jackson Jr.",
+      "line": 20.5,
+      "adjusted_mean": 23.3,
+      "win_prob_pct": 76.4,
+      "edge_pts": 2.8,
+      "confidence_0_100": 92,
+      "selection_tier": 1,
+      "selection_flag": null,
+      "goat_factors": {
+        "usage_pct": 35.7,
+        "ts_pct": null,
+        "opp_drtg": 110.0,
+        "clutch_ppg": null,
+        "league_rank": 43
+      },
+      "why_summary": "High Usage [35.7%] + 1 day rest. League Rank #43. Simulation edge: +2.8 pts."
+    },
+    {
+      "player": "Jaylen Wells",
+      "line": 12.5,
+      "adjusted_mean": 9.9,
+      "win_prob_pct": 33.5,
+      "edge_pts": -2.6,
+      "confidence_0_100": 40,
+      "selection_tier": 4,
+      "selection_flag": "\u26a1 FALLBACK PICK",
+      "goat_factors": {
+        "usage_pct": 34.1,
+        "ts_pct": null,
+        "opp_drtg": 110.0,
+        "clutch_ppg": null,
+        "league_rank": 106
+      },
+      "why_summary": "Usage [34.1%] + 1 day rest. League Rank #106. Simulation edge: -2.6 pts."
+    },
+    {
+      "player": "Cedric Coward",
+      "line": 12.5,
+      "adjusted_mean": 7.6,
+      "win_prob_pct": 23.1,
+      "edge_pts": -4.9,
+      "confidence_0_100": 28,
+      "selection_tier": 4,
+      "selection_flag": "\u26a1 FALLBACK PICK",
+      "goat_factors": {
+        "usage_pct": 39.0,
+        "ts_pct": null,
+        "opp_drtg": 110.0,
+        "clutch_ppg": null,
+        "league_rank": 83
+      },
+      "why_summary": "Usage [39.0%] + 1 day rest. League Rank #83. Simulation edge: -4.9 pts."
+    }
+  ],
+  "selection_summary": {
+    "away_tier_breakdown": {
+      "tier1": 0,
+      "tier2": 0,
+      "tier3": 0,
+      "tier4": 3
+    },
+    "home_tier_breakdown": {
+      "tier1": 1,
+      "tier2": 0,
+      "tier3": 0,
+      "tier4": 2
+    },
+    "relaxed_picks_count": 0,
+    "fallback_picks_count": 5
+  }
+}

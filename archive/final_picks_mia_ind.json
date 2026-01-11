@@ -1,0 +1,133 @@
+{
+  "meta": {
+    "matchup": "MIA @ IND",
+    "game_date": "2026-01-10",
+    "data_source": "balldontlie_goat",
+    "features_used": [
+      "recent_usage_pct",
+      "recent_off_rating", 
+      "team_drtg",
+      "starter_detection",
+      "partial_league_rank",
+      "simulation_engine"
+    ]
+  },
+  "away_picks": [
+    {
+      "player": "Norman Powell",
+      "line": 21.5,
+      "adjusted_mean": 30.83,
+      "win_prob_pct": 93.0,
+      "edge_pts": 9.33,
+      "confidence_0_100": 95,
+      "selection_tier": 1,
+      "selection_flag": null,
+      "goat_factors": {
+        "usage_pct": 41.6,
+        "ts_pct": null,
+        "opp_drtg": 110.0,
+        "clutch_ppg": null,
+        "league_rank": 19
+      },
+      "why_summary": "ELITE LOCK: 93% win probability with +9.33 pts edge. High usage (41.6%) vs MIA defense. Top 20 scorer (#19)."
+    },
+    {
+      "player": "Davion Mitchell", 
+      "line": 7.5,
+      "adjusted_mean": 11.0,
+      "win_prob_pct": 86.5,
+      "edge_pts": 3.5,
+      "confidence_0_100": 88,
+      "selection_tier": 1,
+      "selection_flag": null,
+      "goat_factors": {
+        "usage_pct": 23.3,
+        "ts_pct": null,
+        "opp_drtg": 110.0,
+        "clutch_ppg": null,
+        "league_rank": 150
+      },
+      "why_summary": "STRONG VALUE: 86.5% win probability with +3.5 pts edge. Reliable starter minutes despite lower volume."
+    },
+    {
+      "player": "Andrew Wiggins",
+      "line": 14.5,
+      "adjusted_mean": 17.68,
+      "win_prob_pct": 80.5,
+      "edge_pts": 3.18,
+      "confidence_0_100": 82,
+      "selection_tier": 1,
+      "selection_flag": null,
+      "goat_factors": {
+        "usage_pct": 29.9,
+        "ts_pct": null,
+        "opp_drtg": 110.0,
+        "clutch_ppg": null,
+        "league_rank": 61
+      },
+      "why_summary": "STRONG VALUE: 80.5% win probability with +3.18 pts edge. Consistent scoring role (29.9% usage)."
+    }
+  ],
+  "home_picks": [
+    {
+      "player": "Pascal Siakam",
+      "line": 26.5,
+      "adjusted_mean": 30.35,
+      "win_prob_pct": 79.9,
+      "edge_pts": 3.85,
+      "confidence_0_100": 82,
+      "selection_tier": 1,
+      "selection_flag": null,
+      "goat_factors": {
+        "usage_pct": 41.8,
+        "ts_pct": null,
+        "opp_drtg": 110.0,
+        "clutch_ppg": null,
+        "league_rank": 21
+      },
+      "why_summary": "STRONG VALUE: 79.9% win probability with +3.85 pts edge. Primary scorer (41.8% usage) for IND. Top 25 scorer (#21)."
+    },
+    {
+      "player": "Aaron Nesmith",
+      "line": 16.5,
+      "adjusted_mean": 17.65,
+      "win_prob_pct": 58.1,
+      "edge_pts": 1.15,
+      "confidence_0_100": 62,
+      "selection_tier": 2,
+      "selection_flag": null,
+      "goat_factors": {
+        "usage_pct": 28.7,
+        "ts_pct": null,
+        "opp_drtg": 110.0,
+        "clutch_ppg": null,
+        "league_rank": null
+      },
+      "why_summary": "COIN FLIP: 58.1% win probability with +1.15 pts edge. Reliable starter role with solid usage (28.7%)."
+    },
+    {
+      "player": "T.J. McConnell",
+      "line": 10.5,
+      "adjusted_mean": 11.3,
+      "win_prob_pct": 55.1,
+      "edge_pts": 0.8,
+      "confidence_0_100": 58,
+      "selection_tier": 4,
+      "selection_flag": "⚡ FALLBACK PICK",
+      "goat_factors": {
+        "usage_pct": 36.5,
+        "ts_pct": null,
+        "opp_drtg": 110.0,
+        "clutch_ppg": null,
+        "league_rank": null
+      },
+      "why_summary": "FALLBACK PICK: Only 2 eligible IND starters (Nembhard questionable). Selected T.J. McConnell via edge_pts fallback (+0.8 pts edge)."
+    }
+  ],
+  "selection_summary": {
+    "away_tier_breakdown": {"tier1": 3, "tier2": 0, "tier3": 0, "tier4": 0},
+    "home_tier_breakdown": {"tier1": 1, "tier2": 1, "tier3": 0, "tier4": 1},
+    "relaxed_picks_count": 0,
+    "fallback_picks_count": 1
+  }
+}

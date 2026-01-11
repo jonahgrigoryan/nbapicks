@@ -102,8 +102,8 @@ ELSE:                        0.0
 
 ### C. Team Defense Matchup (Opponent DRtg)
 ```
-IF opp.advanced.defensive_rating >= 118:  +2.0 (Bottom 10 defense)
-IF opp.advanced.defensive_rating >= 114:  +1.0 (Below avg defense)
+IF opp.advanced.defensive_rating >= 118:  +1.7 (Bottom 10 defense)
+IF opp.advanced.defensive_rating >= 114:  +0.8 (Below avg defense)
 IF opp.advanced.defensive_rating <= 108:  -2.0 (Top 5 defense)
 IF opp.advanced.defensive_rating <= 112:  -1.0 (Above avg defense)
 ELSE:                                      0.0
@@ -113,24 +113,25 @@ ELSE:                                      0.0
 ```
 projected_pace = (team.pace_official + opp.pace_official) / 2
 
-IF projected_pace >= 104:  +2.8 (Fast pace)
-IF projected_pace <= 98:   -2.8 (Slow pace)
+IF projected_pace >= 104:  +2.7 (Fast pace)
+IF projected_pace <= 98:   -2.7 (Slow pace)
 ELSE:                       0.0
 ```
 
 ### E. Days of Rest
 ```
-IF days_rest == 0 (B2B):   -2.0 (road) / -1.2 (home)
+IF days_rest == 0 (B2B):   -1.8 (road) / -1.0 (home)
 IF days_rest == 1:          0.0 (standard)
-IF days_rest == 2:         +0.4 (optimal recovery)
+IF days_rest == 2:         +0.2 (optimal recovery)
 IF days_rest >= 3:         -0.3 (rust factor)
 ```
 
 ### F. Recent Form (L5 vs Season)
 ```
-form_delta = ((recent.pts.avg - season.pts) / season.pts) * 9.0
-Capped at: [-3.8, +3.8]
+form_delta = ((recent.pts.avg - season.pts) / season.pts) * 17.0
+Capped at: [-5.5, +5.5]
 ```
+**Note**: Updated Jan 2026 based on tuning analysis showing consistent under-prediction (form correlation: 0.3658). Multiplier increased ~17% to better capture recent form momentum.
 
 ### G. Clutch Performance Bonus
 ```
@@ -141,22 +142,29 @@ IF clutch_pts_avg < 1.0:   -0.5 (Struggles in clutch)
 
 ### H. League Standing Bonus
 ```
-IF pts_league_rank <= 10:   +1.2 (Top 10 scorer)
-IF pts_league_rank <= 25:   +0.6 (Top 25 scorer)
+IF pts_league_rank <= 10:   +1.4 (Top 10 scorer)
+IF pts_league_rank <= 25:   +0.5 (Top 25 scorer)
 IF pts_league_rank >= 100:  -0.5 (Low volume)
 ```
 
 ### I. Minutes Stability Adjustment
 ```
-IF proj_minutes >= 34:      +1.7 (High volume floor)
-IF proj_minutes >= 30:      +0.8 (Reliable starter)
+IF proj_minutes >= 34:      +1.2 (High volume floor)
+IF proj_minutes >= 30:      +0.6 (Reliable starter)
 IF proj_minutes >= 26:       0.0
 IF proj_minutes < 26:       -3.3 (High scratch/bench risk)
 ```
 
+### J. Scoring Consistency (StDev)
+```
+IF recent.pts.stdev <= 5.0:  +1.3 (Reliable floor)
+IF recent.pts.stdev > 7.0:   -1.7 (High volatility)
+ELSE:                         0.0
+```
+
 ### Total GOAT Score Formula:
 ```
-GOAT_SCORE = Usage + Efficiency + Defense_Matchup + Pace + Rest + Form + Clutch + League_Rank + Minutes
+GOAT_SCORE = Usage + Efficiency + Defense_Matchup + Pace + Rest + Form + Clutch + League_Rank + Minutes + Consistency
 ```
 
 ---
@@ -200,10 +208,66 @@ Only consider players where:
 3. **GOAT Score** (secondary tie-breaker)
 4. **Consistency** (recent.pts.stdev ≤ 7 preferred)
 
-### Per-Team Selection
-- Select **TOP 3** players per team
-- Must have `win_prob_pct >= 55%` minimum
-- No duplicate players
+### Per-Team Selection: DYNAMIC THRESHOLD SYSTEM
+
+**Goal**: Select exactly **3 unique players per team**
+
+Use this **cascading threshold approach** — start strict, relax if needed:
+
+#### Tier 1 (Strict): `win_prob_pct >= 60%`
+- Apply to all eligible players
+- If 3+ players qualify per team → select top 3 by win_prob
+- If < 3 per team → proceed to Tier 2
+
+#### Tier 2 (Standard): `win_prob_pct >= 55%`
+- Include Tier 1 selections + new qualifiers at 55%+
+- If 3+ players qualify per team → select top 3 by win_prob
+- If < 3 per team → proceed to Tier 3
+
+#### Tier 3 (Relaxed): `win_prob_pct >= 50%`
+- Include Tier 1+2 selections + new qualifiers at 50%+
+- If 3+ players qualify per team → select top 3 by win_prob
+- If < 3 per team → proceed to Tier 4
+
+#### Tier 4 (Fallback): `edge_pts >= 0.5` OR top by GOAT_SCORE
+- For any team still < 3 players:
+  - Add players with `edge_pts >= 0.5` regardless of win_prob
+  - If still < 3: add remaining starters ranked by GOAT_SCORE
+- **MUST** reach exactly 3 per team
+
+### Selection Algorithm (Pseudocode)
+```
+FOR each team IN [away, home]:
+    candidates = filter(starters with baseline_line, not injured)
+    selected = []
+    
+    # Tier 1: Strict
+    tier1 = filter(candidates, win_prob >= 60%)
+    selected += sort(tier1, by=win_prob, desc)[:3]
+    
+    IF len(selected) < 3:
+        # Tier 2: Standard
+        tier2 = filter(candidates - selected, win_prob >= 55%)
+        selected += sort(tier2, by=win_prob, desc)[:3 - len(selected)]
+    
+    IF len(selected) < 3:
+        # Tier 3: Relaxed
+        tier3 = filter(candidates - selected, win_prob >= 50%)
+        selected += sort(tier3, by=win_prob, desc)[:3 - len(selected)]
+    
+    IF len(selected) < 3:
+        # Tier 4: Fallback
+        remaining = candidates - selected
+        tier4 = sort(remaining, by=edge_pts, desc)
+        selected += tier4[:3 - len(selected)]
+    
+    OUTPUT selected  # Exactly 3 players
+```
+
+### Flag Low-Confidence Picks
+When including Tier 3 or Tier 4 picks, add a warning flag:
+- `⚠️ RELAXED THRESHOLD` — player selected at < 55% win_prob
+- `⚡ FALLBACK PICK` — player selected via edge_pts or GOAT_SCORE
 
 ---
 
@@ -232,6 +296,8 @@ Only consider players where:
       "win_prob_pct": 68.5,
       "edge_pts": 1.7,
       "confidence_0_100": 82,
+      "selection_tier": 1,
+      "selection_flag": null,
       "goat_factors": {
         "usage_pct": 28.5,
         "ts_pct": 0.612,
@@ -240,6 +306,18 @@ Only consider players where:
         "league_rank": 8
       },
       "why_summary": "Usage [28.5%] + Elite TS [61.2%] vs weak DEF [116.2 DRtg]. Top 10 scorer (#8). Simulation edge: +1.7 pts."
+    },
+    {
+      "player": "Second Player",
+      "line": 18.5,
+      "adjusted_mean": 19.8,
+      "win_prob_pct": 52.3,
+      "edge_pts": 1.3,
+      "confidence_0_100": 58,
+      "selection_tier": 3,
+      "selection_flag": "⚠️ RELAXED THRESHOLD",
+      "goat_factors": { "...": "..." },
+      "why_summary": "Selected at relaxed threshold (Tier 3). Edge: +1.3 pts."
     }
   ],
   "home_picks": [
@@ -250,6 +328,8 @@ Only consider players where:
       "win_prob_pct": 65.2,
       "edge_pts": 2.3,
       "confidence_0_100": 78,
+      "selection_tier": 1,
+      "selection_flag": null,
       "goat_factors": {
         "usage_pct": 25.1,
         "ts_pct": 0.585,
@@ -259,7 +339,13 @@ Only consider players where:
       },
       "why_summary": "Solid usage [25.1%] + 2-day rest advantage. Clutch performer [2.8 PPG]. Simulation edge: +2.3 pts."
     }
-  ]
+  ],
+  "selection_summary": {
+    "away_tier_breakdown": {"tier1": 2, "tier2": 1, "tier3": 0, "tier4": 0},
+    "home_tier_breakdown": {"tier1": 3, "tier2": 0, "tier3": 0, "tier4": 0},
+    "relaxed_picks_count": 1,
+    "fallback_picks_count": 0
+  }
 }
 ```
 
@@ -272,8 +358,11 @@ After final output, provide these summary bullets:
 - **🎯 Live Line Sync**: [X] players with Vegas lines fetched via `/nba/v2/player_props`
 - **📊 GOAT Metrics Applied**: Usage%, TS%, Team DRtg from official endpoints
 - **🏀 Starters Auto-Detected**: [X] away, [Y] home via `is_starter` field
+- **✅ Selection**: 3 away + 3 home = 6 total picks
+- **📈 Tier Breakdown**: [X] Tier 1 (≥60%) | [X] Tier 2 (≥55%) | [X] Tier 3 (≥50%) | [X] Tier 4 (Fallback)
 - **🔥 Top Edge Found**: [Player Name] with +[X.X] pts edge, [XX.X]% win prob
-- **⚠️ Key Risk Factors**: [List any concerning factors: tough matchups, B2B, injuries]
+- **⚠️ Relaxed Picks**: [List any Tier 3/4 picks with warnings]
+- **⚡ Key Risk Factors**: [List any concerning factors: tough matchups, B2B, injuries]
 
 ---
 

@@ -1,0 +1,150 @@
+{
+  "away_selected": [
+    {
+      "player": "Giannis Antetokounmpo",
+      "team": "MIL",
+      "line": 30.5,
+      "adjusted_mean": 36.53,
+      "win_prob_pct": 91.1,
+      "edge_pts": 6.03,
+      "stdev": 4.41,
+      "goat_factors": {
+        "usage_pct": 45.0,
+        "ts_pct": null,
+        "off_rating": 127.4,
+        "opp_drtg": 110.0,
+        "opp_nrtg": 0.0,
+        "clutch_ppg": null,
+        "league_rank": null,
+        "is_starter": true,
+        "days_rest": 1,
+        "dvp_bucket": "AVERAGE"
+      },
+      "is_starter": true,
+      "selection_tier": 1,
+      "selection_flag": null
+    },
+    {
+      "player": "Ryan Rollins",
+      "team": "MIL",
+      "line": 14.5,
+      "adjusted_mean": 17.54,
+      "win_prob_pct": 68.9,
+      "edge_pts": 3.04,
+      "stdev": 6.11,
+      "goat_factors": {
+        "usage_pct": 25.6,
+        "ts_pct": null,
+        "off_rating": 121.7,
+        "opp_drtg": 110.0,
+        "opp_nrtg": 0.0,
+        "clutch_ppg": null,
+        "league_rank": 52,
+        "is_starter": true,
+        "days_rest": 1,
+        "dvp_bucket": "AVERAGE"
+      },
+      "is_starter": true,
+      "selection_tier": 1,
+      "selection_flag": null
+    },
+    {
+      "player": "Kevin Porter Jr.",
+      "team": "MIL",
+      "line": 16.5,
+      "adjusted_mean": 18.1,
+      "win_prob_pct": 62.1,
+      "edge_pts": 1.6,
+      "stdev": 5.0,
+      "goat_factors": {
+        "usage_pct": 27.4,
+        "ts_pct": null,
+        "off_rating": 119.3,
+        "opp_drtg": 110.0,
+        "opp_nrtg": 0.0,
+        "clutch_ppg": null,
+        "league_rank": null,
+        "is_starter": true,
+        "days_rest": 1,
+        "dvp_bucket": "AVERAGE"
+      },
+      "is_starter": true,
+      "selection_tier": 1,
+      "selection_flag": null
+    }
+  ],
+  "home_selected": [
+    {
+      "player": "Luka Doncic",
+      "team": "LAL",
+      "line": 33.5,
+      "adjusted_mean": 40.39,
+      "win_prob_pct": 98.4,
+      "edge_pts": 6.89,
+      "stdev": 3.2,
+      "goat_factors": {
+        "usage_pct": 44.8,
+        "ts_pct": null,
+        "off_rating": 114.0,
+        "opp_drtg": 110.0,
+        "opp_nrtg": 0.0,
+        "clutch_ppg": null,
+        "league_rank": 1,
+        "is_starter": true,
+        "days_rest": 1,
+        "dvp_bucket": "STRONG"
+      },
+      "is_starter": true,
+      "selection_tier": 1,
+      "selection_flag": null
+    },
+    {
+      "player": "LeBron James",
+      "team": "LAL",
+      "line": 22.5,
+      "adjusted_mean": 17.04,
+      "win_prob_pct": 31.7,
+      "edge_pts": -5.46,
+      "stdev": 11.51,
+      "goat_factors": {
+        "usage_pct": 39.9,
+        "ts_pct": null,
+        "off_rating": 112.4,
+        "opp_drtg": 110.0,
+        "opp_nrtg": 0.0,
+        "clutch_ppg": null,
+        "league_rank": null,
+        "is_starter": true,
+        "days_rest": 1,
+        "dvp_bucket": "STRONG"
+      },
+      "is_starter": true,
+      "selection_tier": 4,
+      "selection_flag": "\u26a1 FALLBACK PICK"
+    },
+    {
+      "player": "Deandre Ayton",
+      "team": "LAL",
+      "line": 12.5,
+      "adjusted_mean": 10.28,
+      "win_prob_pct": 32.7,
+      "edge_pts": -2.22,
+      "stdev": 4.87,
+      "goat_factors": {
+        "usage_pct": 21.5,
+        "ts_pct": null,
+        "off_rating": 109.8,
+        "opp_drtg": 110.0,
+        "opp_nrtg": 0.0,
+        "clutch_ppg": null,
+        "league_rank": 78,
+        "is_starter": true,
+        "days_rest": 1,
+        "dvp_bucket": "STRONG"
+      },
+      "is_starter": true,
+      "selection_tier": 4,
+      "selection_flag": "\u26a1 FALLBACK PICK"
+    }
+  ]
+}

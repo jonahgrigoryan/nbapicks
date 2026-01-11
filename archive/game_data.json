@@ -1,0 +1,1126 @@
+{
+  "meta": {
+    "game_date": "2026-01-11",
+    "season": 2025,
+    "away_abbr": "BKN",
+    "home_abbr": "MEM",
+    "source": "balldontlie_goat",
+    "balldontlie_game_id": 18447363,
+    "features": [
+      "official_usage_pct",
+      "official_ts_pct",
+      "team_drtg",
+      "starter_detection",
+      "league_rank",
+      "clutch_scoring"
+    ]
+  },
+  "teams": {
+    "BKN": {
+      "team_id": 3,
+      "back_to_back": false,
+      "days_rest": 1,
+      "pace_last_10": 97.62,
+      "pace_official": 100.0,
+      "dvp": {
+        "C": {
+          "pts_allowed_avg": 10.4,
+          "rank": 1,
+          "bucket": "STRONG"
+        },
+        "G": {
+          "pts_allowed_avg": 10.9,
+          "rank": 1,
+          "bucket": "STRONG"
+        },
+        "F": {
+          "pts_allowed_avg": 11.8,
+          "rank": 1,
+          "bucket": "STRONG"
+        }
+      },
+      "advanced": {
+        "defensive_rating": 110.0,
+        "offensive_rating": 110.0,
+        "net_rating": 0.0,
+        "pace": 100.0,
+        "win": 11,
+        "loss": 24
+      }
+    },
+    "MEM": {
+      "team_id": 15,
+      "back_to_back": false,
+      "days_rest": 1,
+      "pace_last_10": 106.17,
+      "pace_official": 100.0,
+      "dvp": {
+        "C": {
+          "pts_allowed_avg": 11.7,
+          "rank": 1,
+          "bucket": "STRONG"
+        },
+        "G": {
+          "pts_allowed_avg": 15.0,
+          "rank": 10,
+          "bucket": "AVERAGE"
+        },
+        "F": {
+          "pts_allowed_avg": 13.8,
+          "rank": 13,
+          "bucket": "AVERAGE"
+        }
+      },
+      "advanced": {
+        "defensive_rating": 110.0,
+        "offensive_rating": 110.0,
+        "net_rating": 0.0,
+        "pace": 100.0,
+        "win": 16,
+        "loss": 22
+      }
+    }
+  },
+  "players": {
+    "BKN": [
+      {
+        "player_id": 375,
+        "name": "Michael Porter Jr.",
+        "position": "F",
+        "season": {
+          "minutes": 33.1,
+          "pts": 25.9,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 20.6,
+          "pts": {
+            "avg": 15.8,
+            "stdev": 13.862178760930766
+          },
+          "usg_pct": 44.4,
+          "ts_pct": null,
+          "off_rating": 122.4
+        },
+        "injury_status": "OUT",
+        "injury_notes": "Porter will sit for the front end of the Nets' back-to-back set Sunday, but he should be available for Monday's road tilt against the Mavericks. Danny Wolf and Cam Thomas are the top candidates to enter the Nets' starting lineup due to the absences of Porter, Drake Powell (knee) and Ziaire Williams (illness).",
+        "is_starter": true,
+        "pts_league_rank": 15,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 3092,
+        "name": "Haywood Highsmith",
+        "position": "",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 0.0,
+          "pts": {
+            "avg": 0.0,
+            "stdev": 0.0
+          },
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "OUT",
+        "injury_notes": "Highsmith has yet to make his season debut as he recovers from right knee surgery he underwent in August. There remains no clear timetable for the 29-year-old forward's return to action, so he should be considered week-to-week until the Nets offer an update on his progress.",
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 666508,
+        "name": "Nicolas Claxton",
+        "position": "F-C",
+        "season": {
+          "minutes": 29.9,
+          "pts": 13.3,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 15.6,
+          "pts": {
+            "avg": 6.2,
+            "stdev": 5.418486873657627
+          },
+          "usg_pct": 23.8,
+          "ts_pct": null,
+          "off_rating": 97.7
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": true,
+        "pts_league_rank": 89,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 666743,
+        "name": "Terance Mann",
+        "position": "G",
+        "season": {
+          "minutes": 26.2,
+          "pts": 8.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 14.6,
+          "pts": {
+            "avg": 5.6,
+            "stdev": 5.276362383309167
+          },
+          "usg_pct": 22.3,
+          "ts_pct": null,
+          "off_rating": 71.6
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": true,
+        "pts_league_rank": 173,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 17896027,
+        "name": "Ziaire Williams",
+        "position": "G-F",
+        "season": {
+          "minutes": 22.5,
+          "pts": 9.1,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 19.4,
+          "pts": {
+            "avg": 9.2,
+            "stdev": 5.706137047074842
+          },
+          "usg_pct": 21.2,
+          "ts_pct": null,
+          "off_rating": 87.2
+        },
+        "injury_status": "OUT",
+        "injury_notes": "Williams appeared to be a healthy scratch during Friday's loss against the Clippers despite starting Wednesday against the Magic. He may have been held out of Friday's contest while battling an illness, and his next chance to play is Monday against the Mavericks. Michael Porter (rest) and Drake Powell (knee) are also ruled out against Memphis, so Danny Wolf and Cam Thomas are both in line for elevated roles.",
+        "is_starter": false,
+        "pts_league_rank": 152,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 17896038,
+        "name": "Day'Ron Sharpe",
+        "position": "C",
+        "season": {
+          "minutes": 17.6,
+          "pts": 7.5,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 25.6,
+          "pts": {
+            "avg": 10.0,
+            "stdev": 4.69041575982343
+          },
+          "usg_pct": 23.5,
+          "ts_pct": null,
+          "off_rating": 114.5
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": 182,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 17896048,
+        "name": "Cam Thomas",
+        "position": "G",
+        "season": {
+          "minutes": 25.4,
+          "pts": 19.6,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 18.2,
+          "pts": {
+            "avg": 12.2,
+            "stdev": 7.138627319029899
+          },
+          "usg_pct": 42.2,
+          "ts_pct": null,
+          "off_rating": 84.4
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": true,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 38017663,
+        "name": "E.J. Liddell",
+        "position": "F",
+        "season": {
+          "minutes": 4.4,
+          "pts": 1.8,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 0.6,
+          "pts": {
+            "avg": 0.0,
+            "stdev": 0.0
+          },
+          "usg_pct": 0.0,
+          "ts_pct": null,
+          "off_rating": 50.0
+        },
+        "injury_status": "QUESTIONABLE",
+        "injury_notes": "Liddell has been a prominent player for Long Island in the G League, but he has just eight appearances at the NBA level this season for an average of 4.4 minutes per contest.",
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 38017722,
+        "name": "Tyrese Martin",
+        "position": "G",
+        "season": {
+          "minutes": 19.5,
+          "pts": 7.4,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 4.6,
+          "pts": {
+            "avg": 0.6,
+            "stdev": 1.2
+          },
+          "usg_pct": 29.2,
+          "ts_pct": null,
+          "off_rating": 35.8
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": 185,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 56677722,
+        "name": "Jalen Wilson",
+        "position": "F",
+        "season": {
+          "minutes": 13.4,
+          "pts": 4.7,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 8.2,
+          "pts": {
+            "avg": 2.0,
+            "stdev": 3.0983866769659336
+          },
+          "usg_pct": 21.5,
+          "ts_pct": null,
+          "off_rating": 76.3
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 56677843,
+        "name": "Noah Clowney",
+        "position": "F",
+        "season": {
+          "minutes": 28.4,
+          "pts": 13.1,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 29.4,
+          "pts": {
+            "avg": 12.6,
+            "stdev": 4.882622246293481
+          },
+          "usg_pct": 30.9,
+          "ts_pct": null,
+          "off_rating": 112.3
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": true,
+        "pts_league_rank": 94,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1043947937,
+        "name": "Tyson Etienne",
+        "position": "G",
+        "season": {
+          "minutes": 4.3,
+          "pts": 1.5,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 0.0,
+          "pts": {
+            "avg": 0.0,
+            "stdev": 0.0
+          },
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1057266813,
+        "name": "Egor Demin",
+        "position": "G",
+        "season": {
+          "minutes": 24.7,
+          "pts": 10.5,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 22.6,
+          "pts": {
+            "avg": 12.0,
+            "stdev": 6.841052550594828
+          },
+          "usg_pct": 28.3,
+          "ts_pct": null,
+          "off_rating": 94.1
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": 130,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1057275262,
+        "name": "Nolan Traor\u00e9",
+        "position": "G",
+        "season": {
+          "minutes": 15.7,
+          "pts": 4.3,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 22.4,
+          "pts": {
+            "avg": 6.2,
+            "stdev": 3.059411708155671
+          },
+          "usg_pct": 25.5,
+          "ts_pct": null,
+          "off_rating": 102.6
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1057279425,
+        "name": "Drake Powell",
+        "position": "F",
+        "season": {
+          "minutes": 18.1,
+          "pts": 5.8,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 19.8,
+          "pts": {
+            "avg": 5.8,
+            "stdev": 4.915282290977803
+          },
+          "usg_pct": 19.1,
+          "ts_pct": null,
+          "off_rating": 99.0
+        },
+        "injury_status": "OUT",
+        "injury_notes": "Powell will miss the front end of this back-to-back set due to left knee injury management, and his next opportunity to play will come Monday against Dallas. With the rookie first-rounder being joined on the sidelines by Michael Porter (rest) and Ziaire Williams (illness), Jalen Wilson, Danny Wolf and Tyrese Martin are candidates for increased playing time.",
+        "is_starter": false,
+        "pts_league_rank": 220,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1057279760,
+        "name": "Ben Saraf",
+        "position": "G",
+        "season": {
+          "minutes": 16.9,
+          "pts": 5.4,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 0.0,
+          "pts": {
+            "avg": 0.0,
+            "stdev": 0.0
+          },
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "QUESTIONABLE",
+        "injury_notes": "Knee",
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1057280779,
+        "name": "Danny Wolf",
+        "position": "F-C",
+        "season": {
+          "minutes": 19.3,
+          "pts": 7.5,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 23.4,
+          "pts": {
+            "avg": 7.8,
+            "stdev": 3.4292856398964493
+          },
+          "usg_pct": 20.3,
+          "ts_pct": null,
+          "off_rating": 104.5
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1057846840,
+        "name": "Chaney Johnson",
+        "position": "",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 0.0,
+          "pts": {
+            "avg": 0.0,
+            "stdev": 0.0
+          },
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      }
+    ],
+    "MEM": [
+      {
+        "player_id": 81,
+        "name": "Kentavious Caldwell-Pope",
+        "position": "G",
+        "season": {
+          "minutes": 21.3,
+          "pts": 8.4,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 19.0,
+          "pts": {
+            "avg": 9.8,
+            "stdev": 6.4
+          },
+          "usg_pct": 29.7,
+          "ts_pct": null,
+          "off_rating": 108.8
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": 165,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 231,
+        "name": "Jaren Jackson Jr.",
+        "position": "F-C",
+        "season": {
+          "minutes": 30.4,
+          "pts": 18.6,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 32.2,
+          "pts": {
+            "avg": 20.4,
+            "stdev": 3.7735924528226414
+          },
+          "usg_pct": 35.7,
+          "ts_pct": null,
+          "off_rating": 105.7
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": true,
+        "pts_league_rank": 43,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 666505,
+        "name": "Brandon Clarke",
+        "position": "F",
+        "season": {
+          "minutes": 10.2,
+          "pts": 4.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 0.0,
+          "pts": {
+            "avg": 0.0,
+            "stdev": 0.0
+          },
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": 0.0
+        },
+        "injury_status": "OUT",
+        "injury_notes": "Clarke missed the first 26 games of the season recovering from a knee injury, and only appeared in one full game before straining his calf just four minutes into his second contest. Santi Aldama and Jock Landale will likely see increased roles as a result.",
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 666676,
+        "name": "Ty Jerome",
+        "position": "G",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 0.0,
+          "pts": {
+            "avg": 0.0,
+            "stdev": 0.0
+          },
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "OUT",
+        "injury_notes": "Jerome continues to rehab from a high-grade right calf strain that he suffered during the preseason. His initial timeline to return was four weeks, but the seventh-year pro needs more time to recover, and his updated timeline means he's unlikely to make his 2025-26 regular-season debut until the new year. Vince Williams and Cam Spencer will continue to see more playing time in the absences of Jerome, Ja Morant (calf) and Scotty Pippen (toe).",
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 666703,
+        "name": "John Konchar",
+        "position": "G-F",
+        "season": {
+          "minutes": 13.0,
+          "pts": 3.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 0.0,
+          "pts": {
+            "avg": 0.0,
+            "stdev": 0.0
+          },
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": 0.0
+        },
+        "injury_status": "QUESTIONABLE",
+        "injury_notes": "Konchar has missed the last 14 games for Memphis, and the questionable tag suggests he might have a shot at returning Sunday. Konchar hasn't played since Dec. 7 due to a torn UCL in his left thumb, and if he's cleared to return, he's likely to see minutes off the bench as a spot-up shooter.",
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 666786,
+        "name": "Ja Morant",
+        "position": "G",
+        "season": {
+          "minutes": 28.3,
+          "pts": 19.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 6.2,
+          "pts": {
+            "avg": 3.2,
+            "stdev": 6.4
+          },
+          "usg_pct": 43.2,
+          "ts_pct": null,
+          "off_rating": 92.9
+        },
+        "injury_status": "OUT",
+        "injury_notes": "Morant will miss his fifth consecutive contest due to a right calf contusion, and his next opportunity to play will come Thursday against the Magic. With the Murray State product sidelined, Cam Spencer will likely remain in the starting five, while Vince Williams could see increased playing time.",
+        "is_starter": true,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 17896067,
+        "name": "Santi Aldama",
+        "position": "F",
+        "season": {
+          "minutes": 27.8,
+          "pts": 14.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 27.2,
+          "pts": {
+            "avg": 11.8,
+            "stdev": 3.059411708155671
+          },
+          "usg_pct": 28.6,
+          "ts_pct": null,
+          "off_rating": 106.0
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": true,
+        "pts_league_rank": 80,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 19465326,
+        "name": "Jock Landale",
+        "position": "C",
+        "season": {
+          "minutes": 22.5,
+          "pts": 11.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 24.4,
+          "pts": {
+            "avg": 11.8,
+            "stdev": 6.305553108173779
+          },
+          "usg_pct": 24.6,
+          "ts_pct": null,
+          "off_rating": 114.2
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": 127,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 38017656,
+        "name": "Scotty Pippen Jr.",
+        "position": "G",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 0.0,
+          "pts": {
+            "avg": 0.0,
+            "stdev": 0.0
+          },
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "OUT",
+        "injury_notes": "Memphis' awful injury luck continues. Based on this timetable, the earliest possible return for Pippen will be around Jan. 11 against the Nets. Pippen was projected to be the third-string point guard behind Ja Morant (ankle) and Ty Jerome (calf) to open the season, opening the door for Cam Spencer or Javon Small to step up.",
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 38017710,
+        "name": "Christian Koloko",
+        "position": "C",
+        "season": {
+          "minutes": 15.5,
+          "pts": 2.3,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 17.4,
+          "pts": {
+            "avg": 3.4,
+            "stdev": 1.4966629547095767
+          },
+          "usg_pct": 20.5,
+          "ts_pct": null,
+          "off_rating": 104.6
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 38017731,
+        "name": "Vince Williams Jr.",
+        "position": "G",
+        "season": {
+          "minutes": 21.9,
+          "pts": 7.9,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 9.0,
+          "pts": {
+            "avg": 5.6,
+            "stdev": 6.887670143089026
+          },
+          "usg_pct": 24.4,
+          "ts_pct": null,
+          "off_rating": 57.5
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 56677830,
+        "name": "GG Jackson",
+        "position": "F",
+        "season": {
+          "minutes": 14.9,
+          "pts": 6.4,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 21.0,
+          "pts": {
+            "avg": 10.8,
+            "stdev": 5.1146847410177685
+          },
+          "usg_pct": 32.6,
+          "ts_pct": null,
+          "off_rating": 114.8
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 56677859,
+        "name": "Olivier-Maxence Prosper",
+        "position": "F",
+        "season": {
+          "minutes": 11.3,
+          "pts": 4.8,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 5.2,
+          "pts": {
+            "avg": 1.6,
+            "stdev": 3.2
+          },
+          "usg_pct": 23.1,
+          "ts_pct": null,
+          "off_rating": 115.1
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1028025754,
+        "name": "Zach Edey",
+        "position": "C",
+        "season": {
+          "minutes": 25.8,
+          "pts": 13.6,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 0.0,
+          "pts": {
+            "avg": 0.0,
+            "stdev": 0.0
+          },
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "OUT",
+        "injury_notes": "Edey hasn't played since Dec. 7, and it's unclear when he'll be able to return to the hardwood. The big man, who's averaging 13.6 points and 11.1 rebounds per game this season, should be considered doubtful for the Grizzlies' next game against the Magic on Thursday. He's expected to be re-evaluated soon.",
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1028039105,
+        "name": "Jaylen Wells",
+        "position": "F",
+        "season": {
+          "minutes": 27.6,
+          "pts": 12.3,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 27.2,
+          "pts": {
+            "avg": 11.2,
+            "stdev": 6.046486583132389
+          },
+          "usg_pct": 34.1,
+          "ts_pct": null,
+          "off_rating": 100.9
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": true,
+        "pts_league_rank": 106,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1028048549,
+        "name": "Cam Spencer",
+        "position": "G",
+        "season": {
+          "minutes": 23.7,
+          "pts": 12.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 27.6,
+          "pts": {
+            "avg": 10.4,
+            "stdev": 6.248199740725323
+          },
+          "usg_pct": 24.5,
+          "ts_pct": null,
+          "off_rating": 115.4
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": 111,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1057266649,
+        "name": "Cedric Coward",
+        "position": "G",
+        "season": {
+          "minutes": 26.7,
+          "pts": 13.7,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 12.4,
+          "pts": {
+            "avg": 6.8,
+            "stdev": 6.615134163416491
+          },
+          "usg_pct": 39.0,
+          "ts_pct": null,
+          "off_rating": 85.2
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": true,
+        "pts_league_rank": 83,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1057394959,
+        "name": "Jahmai Mashack",
+        "position": "G",
+        "season": {
+          "minutes": 3.5,
+          "pts": 0.9,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 0.8,
+          "pts": {
+            "avg": 0.0,
+            "stdev": 0.0
+          },
+          "usg_pct": 15.0,
+          "ts_pct": null,
+          "off_rating": 100.0
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1057396260,
+        "name": "Javon Small",
+        "position": "G",
+        "season": {
+          "minutes": 12.5,
+          "pts": 4.3,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 5,
+          "minutes_avg": 10.6,
+          "pts": {
+            "avg": 4.2,
+            "stdev": 5.6
+          },
+          "usg_pct": 32.4,
+          "ts_pct": null,
+          "off_rating": 100.1
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      }
+    ]
+  }
+}

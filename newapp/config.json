@@ -1,0 +1,8 @@
+{
+  "poll_interval_sec": 15,
+  "sigmoid_k": 3.0,
+  "upset_min_minutes": 24,
+  "upset_win_prob_threshold": 0.38,
+  "upset_flip_buffer_threshold": 0.1,
+  "upset_flip_swing_threshold": 4.0
+}
