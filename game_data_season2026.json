@@ -1,0 +1,958 @@
+{
+  "meta": {
+    "game_date": "2026-03-13",
+    "season": 2026,
+    "away_abbr": "UTA",
+    "home_abbr": "POR",
+    "source": "balldontlie_goat",
+    "balldontlie_game_id": 18447785,
+    "features": [
+      "official_usage_pct",
+      "official_ts_pct",
+      "team_drtg",
+      "starter_detection",
+      "league_rank",
+      "clutch_scoring"
+    ]
+  },
+  "teams": {
+    "UTA": {
+      "team_id": 29,
+      "back_to_back": false,
+      "days_rest": 1,
+      "pace_last_10": null,
+      "pace_official": 100.0,
+      "dvp": {},
+      "advanced": {
+        "defensive_rating": 110.0,
+        "offensive_rating": 110.0,
+        "net_rating": 0.0,
+        "pace": 100.0,
+        "win": 0,
+        "loss": 0
+      }
+    },
+    "POR": {
+      "team_id": 25,
+      "back_to_back": false,
+      "days_rest": 2,
+      "pace_last_10": null,
+      "pace_official": 100.0,
+      "dvp": {},
+      "advanced": {
+        "defensive_rating": 110.0,
+        "offensive_rating": 110.0,
+        "net_rating": 0.0,
+        "pace": 100.0,
+        "win": 0,
+        "loss": 0
+      }
+    }
+  },
+  "players": {
+    "UTA": [
+      {
+        "player_id": 12,
+        "name": "Kyle Anderson",
+        "position": "F",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 285,
+        "name": "Kevin Love",
+        "position": "F-C",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "OUT",
+        "injury_notes": "Jan 4: Love (rest) won't play in Monday's game against Portland.",
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 297,
+        "name": "Lauri Markkanen",
+        "position": "F",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 338,
+        "name": "Svi Mykhailiuk",
+        "position": "G",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 344,
+        "name": "Georges Niang",
+        "position": "F",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "OUT",
+        "injury_notes": "Dec 29: Niang (foot) has been ruled out for Tuesday's game against the Celtics.",
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 349,
+        "name": "Jusuf Nurkic",
+        "position": "C",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 38017705,
+        "name": "Walker Kessler",
+        "position": "C",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "OUT",
+        "injury_notes": "Nov 5: Kessler will undergo left shoulder surgery and will miss the remainder of the 2025-26 season, Tony Jones of The Athletic reports.",
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 56677778,
+        "name": "Oscar Tshiebwe",
+        "position": "F-C",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 56677824,
+        "name": "Taylor Hendricks",
+        "position": "F",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 56677834,
+        "name": "Keyonte George",
+        "position": "G",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 56677842,
+        "name": "Brice Sensabaugh",
+        "position": "F",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1028025362,
+        "name": "Isaiah Collier",
+        "position": "G",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1028029291,
+        "name": "Cody Williams",
+        "position": "F",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1028035794,
+        "name": "Kyle Filipowski",
+        "position": "C",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1028264794,
+        "name": "Elijah Harkless",
+        "position": "G",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1057260888,
+        "name": "Airious Bailey",
+        "position": "F",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "OUT",
+        "injury_notes": "Jan 4: Bailey (hip) is questionable for Monday's game against Portland.",
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1057271583,
+        "name": "Walter Clayton Jr.",
+        "position": "G",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1057396603,
+        "name": "John Tonje",
+        "position": "G",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      }
+    ],
+    "POR": [
+      {
+        "player_id": 182,
+        "name": "Jerami Grant",
+        "position": "F",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "OUT",
+        "injury_notes": "Jan 4: Grant (Achilles) has been ruled out for Monday's game against the Jazz.",
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 214,
+        "name": "Jrue Holiday",
+        "position": "G",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "OUT",
+        "injury_notes": "Jan 4: Holiday (calf) has been ruled out for Monday's game against the Jazz.",
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 278,
+        "name": "Damian Lillard",
+        "position": "G",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "OUT",
+        "injury_notes": "Sep 25: Lillard won't be back on the court for the 2025-26 season, as he made clear during an interview with YouTube influencer Speed on Wednesday.",
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 476,
+        "name": "Robert Williams III",
+        "position": "C-F",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "DAY-TO-DAY",
+        "injury_notes": "Jan 5: Williams is probable for Monday's game against the Jazz with left knee injury management.",
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 666923,
+        "name": "Matisse Thybulle",
+        "position": "G-F",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "OUT",
+        "injury_notes": "Jan 1: Portland announced Thursday that Thybulle is also dealing with right knee tendinopathy while also ramping up from thumb surgery.",
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 3547242,
+        "name": "Deni Avdija",
+        "position": "F",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 38017690,
+        "name": "Shaedon Sharpe",
+        "position": "G",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 38017693,
+        "name": "Blake Wesley",
+        "position": "G",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "OUT",
+        "injury_notes": "Nov 5: Wesley underwent a successful procedure to repair a fracture of the fifth metatarsal base in his right foot Wednesday, and he's expected to be sidelined for 8-12 weeks, Brett Siegel of ClutchPoints.com reports.",
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 56677747,
+        "name": "Scoot Henderson",
+        "position": "G",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "OUT",
+        "injury_notes": "Jan 1: Henderson (hamstring) will be re-evaluated in two weeks, Sean Highkin of Rip City Radio 620 Portland reports.",
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 56677791,
+        "name": "Kris Murray",
+        "position": "F",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 56677817,
+        "name": "Sidy Cissoko",
+        "position": "G",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 56677829,
+        "name": "Rayan Rupert",
+        "position": "G-F",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 56677850,
+        "name": "Toumani Camara",
+        "position": "F",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 56783340,
+        "name": "Duop Reath",
+        "position": "C",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1028025344,
+        "name": "Donovan Clingan",
+        "position": "C",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1057275769,
+        "name": "Hansen Yang",
+        "position": "C",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1057847330,
+        "name": "Caleb Love",
+        "position": "G",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      },
+      {
+        "player_id": 1058091815,
+        "name": "Javonte Cooke",
+        "position": "G",
+        "season": {
+          "minutes": 0.0,
+          "pts": 0.0,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "recent": {
+          "sample_size": 0,
+          "minutes_avg": 0.0,
+          "pts": null,
+          "usg_pct": null,
+          "ts_pct": null,
+          "off_rating": null
+        },
+        "injury_status": "AVAILABLE",
+        "injury_notes": null,
+        "is_starter": false,
+        "pts_league_rank": null,
+        "clutch_pts_avg": null
+      }
+    ]
+  }
+}
